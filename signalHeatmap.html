@@ -1,0 +1,36 @@
+<!--	signalHeatmap.html
+main page for signal heatmap project
+Cory Lotz
+12/7/2014
+CSCI N300
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+		<meta charset="utf-8">
+		<title>Signal Heatmap</title>
+		<style>
+		  html, body, #map-canvas {
+			height: 90%;
+			margin: 0px;
+			padding: 5px
+		  }
+		</style>
+		<script src = "heatmap.js" type="text/javascript"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMfRp_Eq2gWLcJzA8VH8K2-7UjYs_8GFo"></script>
+		<script src = "gmaps-heatmap.js" type="text/javascript"></script>
+		
+		<script src = "signalHeatmap.js" type = "text/javascript"></script>
+	
+	</head>
+  <body>
+    <div id="map-canvas"></div>
+	
+	<button type = "button" onclick = reDraw()>  ReDraw  </button>
+	
+	
+	
+  </body>
+</html>

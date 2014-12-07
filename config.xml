@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+	xmlns:android   = "http://schemas.android.com/apk/res/android"
+        id          = "edu.iupui.n300.signalHeatmap"
+        version     = "1.0.0" >
+
+    <name>Signal Heatmap</name>
+
+    <description>
+        Tool to show cell signal in a heatmap
+    </description>
+
+    <author href="https://github.com/cdlotz/signalHeatmap" email="cdlotz@iupui.edu">
+        Cory Lotz
+    </author>
+
+<!--
+	<icon src="icon.png" />
+	<gap:splash src="splash.png" />
+-->
+
+	<content src="signalHeatmap.html" />
+	
+	<gap:platform name="android" />
+
+
+    <uses-sdk android:minSdkVersion="19"
+              android:targetSdkVersion="19"
+              android:maxSdkVersion="19" />
+
+<feature name="Geolocation">
+    <param name="android-package" value="org.apache.cordova.GeoBroker" />
+</feature>
+
+
+<gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
+
+
+</widget>

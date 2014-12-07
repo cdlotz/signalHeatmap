@@ -34,15 +34,18 @@ function onDeviceReady(){
 
 //function to redraw map
 function reDraw(){
-	addData(39.7736, -86.171536, 4)
-	addData(39.7736, -86.171536, 6)
+	
 	
 	var testData = {
 	  max: SIGNAL_MAX,
 	  data: data
 	};
 
-	heatmap.setData(testData);
+	addData(39.7736, -86.171536, 6)
+	addData(39.7734, -86.171536, 6)
+	
+	heatmap.setData(testData)
+	heatmap.draw()
 	
 	
 }//end reDraw
@@ -166,6 +169,8 @@ function initialize() {
 		valueField: 'signal'
 	  }
 	);
+	
+	addData(39.7736, -86.171536, 4)
 	
 	
 	var testData = {

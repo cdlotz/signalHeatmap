@@ -32,14 +32,12 @@ function onDeviceReady(){
 	
 	var options = {timeout: 30000};
 	watchID = navigator.geolocation.watchPosition(onSuccess, onError, options);	
-	alert("entered onDeviceReady")
+	
 }//end on dev ready
 
 //function to redraw map
 function reDraw(){
 
-	alert("redraw")
-	
 	
 	var testData = {
 	  max: SIGNAL_MAX,
@@ -69,7 +67,7 @@ function reDraw(){
 function onSuccess(position) {
 	//get signal strength
 	var signal = getSignalStrength()
-	alert("entered onSuccess")
+	
 	
 	//get coordinates
 	var lat = position.coords.latitude

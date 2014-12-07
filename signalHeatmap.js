@@ -23,8 +23,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 var watchID = null;
 
-//load map and heatmap
-google.maps.event.addDomListener(window, 'load', initialize);
+
 	
 
 function onDeviceReady(){
@@ -190,3 +189,5 @@ function initialize() {
 
 
 
+//load map and heatmap
+google.maps.event.addDomListener(window, 'load', initialize);

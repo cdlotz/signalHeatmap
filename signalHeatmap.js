@@ -86,7 +86,6 @@ function saveData(data){
 //function to bring data in from text file
 function loadData(){
 	//save current data first
-	addData(data)
 
 	////Read and Show Code (modified from professor kevins example)
 	function showFileText() {

@@ -32,10 +32,13 @@ function onDeviceReady(){
 	//time out if new update is recieved every 30 seconds
 	var options = {timeout: 30000};
 	watchID = navigator.geolocation.watchPosition(onSuccess, onError, options);	
+	alert("entered onDeviceReady)
 }//end on dev ready
 
 //function to redraw map
 function reDraw(){
+
+	alert("redraw")
 	
 	
 	var testData = {

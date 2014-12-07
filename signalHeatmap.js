@@ -50,20 +50,78 @@ function reDraw(){
 	heatmap.setData(testData)
 	heatmap.draw()
 	
-	
 }//end reDraw
 
 
 
 //function to save array of data objects
-
+function saveData(data){
 	//serialize each object in array as text and add them to the text file
+	var dataAsText = JSON.stringify(data)
 	
 	
+	//Regular Write Code ( modified from prof kevins exampe)
+
+    function writeFile() {
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+    }
+
+    function gotFS(fileSystem) {
+	var filename = "signalData";
+        fileSystem.root.getFile(filename, {create: true, exclusive: false}, gotFileEntry, fail);
+    }
+
+    function gotFileEntry(fileEntry) {
+        fileEntry.createWriter(gotFileWriter, fail);
+    }
+
+    function gotFileWriter(writer) {
+		writer.onwriteend = function(evt) 
+        writer.write(dataAsText);
+
+    }
+	
+}	//end file writing
+
+//function to bring data in from text file
+function loadData(){
+	//save current data first
+	addData(data)
+
+	////Read and Show Code (modified from professor kevins example)
+	function showFileText() {
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSRead, fail);
+	}
+
+	function gotFSRead(fileSystem) {
+	var filename =  "signalData";
+		fileSystem.root.getFile(filename, null, gotFileEntryRead, fail);
+	}
+
+	function gotFileEntryRead(fileEntry) {
+		fileEntry.file(gotFileRead, fail);
+	}
+
+	function gotFileRead(file){		
+		readAsText(file);
+	}
+
+	function readAsText(file) {
+		var reader = new FileReader();
+		reader.onloadend = function(evt) {
+		var dataAsText = evt.target.result;
+
+		data = JSON.parse(dataAsText)
+		
+		reader.readAsText(file);
+}//end file reading
+
+
+ function fail(error) {
+        alert("File Error:" + error.code);
+    }
 
 //function to get gps data and add data to array of signal data objects
-// onSuccess Geolocation
-//
 function onSuccess(position) {
 	//get signal strength
 	var signal = getSignalStrength()

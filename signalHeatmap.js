@@ -28,13 +28,11 @@ var watchID = null;
 
 function onDeviceReady(){
 	
-	google.maps.event.addDomListener(window, 'load', initialize);
-	
 	//time out if new update is recieved every 30 seconds
 	
 	var options = {timeout: 30000};
 	watchID = navigator.geolocation.watchPosition(onSuccess, onError, options);	
-	alert("entered onDeviceReady)
+	alert("entered onDeviceReady")
 }//end on dev ready
 
 //function to redraw map

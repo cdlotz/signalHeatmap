@@ -23,9 +23,11 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 var watchID = null;
 
+//load map and heatmap
+google.maps.event.addDomListener(window, 'load', initialize);
+	
+
 function onDeviceReady(){
-	//load map and heatmap
-	google.maps.event.addDomListener(window, 'load', initialize);
 	
 	//time out if new update is recieved every 30 seconds
 	var options = {timeout: 30000};
@@ -64,6 +66,7 @@ function reDraw(){
 function onSuccess(position) {
 	//get signal strength
 	var signal = getSignalStrength()
+	alert("entered onSuccess")
 	
 	//get coordinates
 	var lat = position.coords.latitude
@@ -183,4 +186,4 @@ function initialize() {
 }
 
 
-google.maps.event.addDomListener(window, 'load', initialize);
+

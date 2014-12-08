@@ -34,9 +34,7 @@ function onDeviceReady(){
 	//load up old data
 	loadData()
 	
-	//recenter the map
-	reCenter()
-	
+		
 	//start watching location
 	getLocation()
 	

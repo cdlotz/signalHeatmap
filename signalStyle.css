@@ -1,0 +1,13 @@
+/* signalStyle.css Cory Lotz 12/8/2014 */
+
+ html, body, #map-canvas {
+			height: 90%;
+			margin: .5%;
+			padding: 0%;
+
+}
+
+button{
+	padding: 1%;
+	margin: 20px;
+}

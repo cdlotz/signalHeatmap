@@ -28,12 +28,13 @@ var watchID = null;
 	
 
 function onDeviceReady(){
+	getLocation()
 	
 	//time out if new update is recieved every 30 seconds
-	
+/*	
 	var options = {timeout: 30000};
 	watchID = navigator.geolocation.watchPosition(onSuccess, onError, options);	
-	
+*/	
 }//end on dev ready
 
 //function to redraw map
@@ -127,6 +128,17 @@ function loadData(){
 	alert("File Error:" + error.code);
 }
 
+
+//html geolocation
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.watchPosition(onSuccess);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+
 //function to get gps data and add data to array of signal data objects
 function onSuccess(position) {
 	//get signal strength
@@ -148,11 +160,14 @@ function onSuccess(position) {
 	
 }//end on sucess
 
+
+
 // onError Callback receives a PositionError object
 function onError(error) {
 	alert('code: '    + error.code    + '\n' +
 		  'message: ' + error.message + '\n');
 }//end on error
+
 
 
 //function to get signal strength (max value until plugin completed)

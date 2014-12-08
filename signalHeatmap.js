@@ -60,13 +60,12 @@ function saveData(){
 	//serialize each object in array as text and add them to the text file
 	var dataAsText = JSON.stringify(data)
 	
-	console.log(dataAsText)
+	alert(dataAsText)
 	
 	//Regular Write Code ( modified from prof kevins exampe)
 
-    function writeFile() {
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-    }
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+    
 
     function gotFS(fileSystem) {
 		var filename = "signalData";
@@ -89,9 +88,8 @@ function loadData(){
 	data = [];
 
 	////Read and Show Code (modified from professor kevins example)
-	function showFileText() {
-		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSRead, fail);
-	}
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSRead, fail);
+	
 
 	function gotFSRead(fileSystem) {
 		var filename =  "signalData";
@@ -111,11 +109,11 @@ function loadData(){
 		reader.onloadend = function(evt) {
 			var dataAsTextOut = evt.target.result;
 			
-		//	console.log(dataAsTextOut)
+			alert("tester" + dataAsTextOut)
 
 			data = JSON.parse(myJSONtext, reviver);
 			
-			cosole.log(JSON.stringify(data))
+			alert(JSON.stringify(data))
 			
 			
 		};

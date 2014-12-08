@@ -39,9 +39,7 @@ function onDeviceReady(){
 function reDraw(){
 
 	
-	
-	
-	addData(39.7738, -86.1715, 4)
+	addData(39.7736, -86.171536, 6)
 	
 	var testData = {
 	  max: SIGNAL_MAX,
@@ -150,7 +148,7 @@ function onError(error) {
 //function to get signal strength (random value until plugin completed)
 function getSignalStrength(){
 	//generate random signal strength
-	var signal = Math.floor((Math.random() * 6) + 0)
+	var signal = Math.floor((Math.random() * 6) + 1)
 	
 	//return it
 	return signal
@@ -232,7 +230,7 @@ function initialize() {
 	  }
 	);
 	
-	addData(39.7736, -86.171536, 4)
+	addData(39.7736, -86.171536, 2)
 	
 	
 	var testData = {

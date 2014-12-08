@@ -296,6 +296,9 @@ function addTest(){
 function clearData(){
 	data = [];
 	addData(0,0,0)
+	
+	//overwrite previous file data
+	saveData()
 }
 
 function rawData(){

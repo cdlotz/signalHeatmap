@@ -29,11 +29,18 @@ var watchID = null;
 
 function onDeviceReady(){
 
+	
+
 	//load up old data
 	loadData()
 	
+	//recenter the map
+	reCenter()
+	
+	//start watching location
 	getLocation()
 	
+
 	
 	//time out if new update is recieved every 30 seconds
 /*	
@@ -125,6 +132,8 @@ function loadData(){
 		};
 		reader.readAsText(file);
 	}
+	
+	reDraw()
 		
 }//end file reading
 

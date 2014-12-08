@@ -39,7 +39,6 @@ function onDeviceReady(){
 function reDraw(){
 
 	
-	addData(39.7736, -86.171536, 6)
 	
 	var testData = {
 	  max: SIGNAL_MAX,
@@ -57,8 +56,11 @@ function reDraw(){
 
 //function to save array of data objects
 function saveData(){
+	
 	//serialize each object in array as text and add them to the text file
 	var dataAsText = JSON.stringify(data)
+	
+	console.log(dataAsText)
 	
 	//Regular Write Code ( modified from prof kevins exampe)
 
@@ -83,7 +85,8 @@ function saveData(){
 
 //function to bring data in from text file
 function loadData(){
-	//save current data first
+	
+	data = [];
 
 	////Read and Show Code (modified from professor kevins example)
 	function showFileText() {
@@ -106,9 +109,15 @@ function loadData(){
 	function readAsText(file) {
 		var reader = new FileReader();
 		reader.onloadend = function(evt) {
-			var dataAsText = evt.target.result;
+			var dataAsTextOut = evt.target.result;
+			
+		//	console.log(dataAsTextOut)
 
-			data = JSON.parse(dataAsText)
+			data = JSON.parse(myJSONtext, reviver);
+			
+			cosole.log(JSON.stringify(data))
+			
+			
 		};
 		reader.readAsText(file);
 	}
@@ -230,7 +239,8 @@ function initialize() {
 	  }
 	);
 	
-	addData(39.7736, -86.171536, 2)
+		
+
 	
 	
 	var testData = {
@@ -241,6 +251,15 @@ function initialize() {
 	heatmap.setData(testData);
 
 }//end initalize
+
+function addTest(){
+	addData(39.7736, -86.171536, 6)
+
+}
+
+function clearData(){
+	data = [];
+}
 
 
 //load map and heatmap

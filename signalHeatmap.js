@@ -28,6 +28,10 @@ var watchID = null;
 	
 
 function onDeviceReady(){
+
+	//load up old data
+	loadData()
+	
 	getLocation()
 	
 	//time out if new update is recieved every 30 seconds
@@ -86,7 +90,7 @@ function saveData(){
 //function to bring data in from text file
 function loadData(){
 	
-	data = [];
+	
 
 	////Read and Show Code (modified from professor kevins example)
 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSRead, fail);
@@ -156,6 +160,11 @@ function onSuccess(position) {
 	//pass data to add data function
 	addData(lat, lng, signal)
 	
+	//save data to file
+	saveData()
+	
+	//redraw the map
+	reDraw()
 	
 	
 }//end on sucess
@@ -270,6 +279,7 @@ function initialize() {
 
 function addTest(){
 	addData(39.7736, -86.171536, 6)
+	addData(39.7736, -86.171436, 6)
 
 }
 

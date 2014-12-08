@@ -34,6 +34,7 @@ function onDeviceReady(){
 	
 	getLocation()
 	
+	
 	//time out if new update is recieved every 30 seconds
 /*	
 	var options = {timeout: 30000};
@@ -295,6 +296,24 @@ function rawData(){
 	
 }
 
+function reCenter(){
+	if (navigator.geolocation) {
+        navigator.geolocation.watchPosition(reCenterGmap, onError, {maximumAge:6000});
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+	
+}
+
+function reCenterGmap(position){
+	var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+        map.setCenter(pos);
+		
+	reDraw()
+		
+	
+		
+}//end reCenter
 
 //load map and heatmap
 google.maps.event.addDomListener(window, 'load', initialize);

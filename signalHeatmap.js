@@ -39,26 +39,28 @@ function onDeviceReady(){
 function reDraw(){
 
 	
+	
+	
+	addData(39.7738, -86.1715, 4)
+	
 	var testData = {
 	  max: SIGNAL_MAX,
 	  data: data
 	};//end test data
 
-	addData(39.7736, -86.171536, 6)
-	addData(39.7734, -86.171536, 6)
 	
 	heatmap.setData(testData)
 	heatmap.draw()
+	
 	
 }//end reDraw
 
 
 
 //function to save array of data objects
-function saveData(data){
+function saveData(){
 	//serialize each object in array as text and add them to the text file
 	var dataAsText = JSON.stringify(data)
-	
 	
 	//Regular Write Code ( modified from prof kevins exampe)
 
@@ -198,8 +200,7 @@ function addData(lat, lng, signal){
 
 //funciton to initalize google maps and heat map
 function initialize() {
-	//create new latlng variable
-	 var treeLatlng = new google.maps.LatLng(41.9, -87.630197)
+	
 	//set map options
 	var mapOptions = {
 		zoom: 17,

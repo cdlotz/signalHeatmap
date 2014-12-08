@@ -42,7 +42,7 @@ function reDraw(){
 	var testData = {
 	  max: SIGNAL_MAX,
 	  data: data
-	};
+	};//end test data
 
 	addData(39.7736, -86.171536, 6)
 	addData(39.7734, -86.171536, 6)
@@ -67,8 +67,8 @@ function saveData(data){
     }
 
     function gotFS(fileSystem) {
-	var filename = "signalData";
-        fileSystem.root.getFile(filename, {create: true, exclusive: false}, gotFileEntry, fail);
+		var filename = "signalData";
+			fileSystem.root.getFile(filename, {create: true, exclusive: false}, gotFileEntry, fail);
     }
 
     function gotFileEntry(fileEntry) {
@@ -76,9 +76,7 @@ function saveData(data){
     }
 
     function gotFileWriter(writer) {
-		writer.onwriteend = function(evt) 
         writer.write(dataAsText);
-
     }
 	
 }	//end file writing
@@ -89,12 +87,12 @@ function loadData(){
 
 	////Read and Show Code (modified from professor kevins example)
 	function showFileText() {
-	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSRead, fail);
+		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSRead, fail);
 	}
 
 	function gotFSRead(fileSystem) {
-	var filename =  "signalData";
-		fileSystem.root.getFile(filename, null, gotFileEntryRead, fail);
+		var filename =  "signalData";
+			fileSystem.root.getFile(filename, null, gotFileEntryRead, fail);
 	}
 
 	function gotFileEntryRead(fileEntry) {
@@ -108,17 +106,19 @@ function loadData(){
 	function readAsText(file) {
 		var reader = new FileReader();
 		reader.onloadend = function(evt) {
-		var dataAsText = evt.target.result;
+			var dataAsText = evt.target.result;
 
-		data = JSON.parse(dataAsText)
-		
+			data = JSON.parse(dataAsText)
+		};
 		reader.readAsText(file);
+	}
+		
 }//end file reading
 
 
  function fail(error) {
-        alert("File Error:" + error.code);
-    }
+	alert("File Error:" + error.code);
+}
 
 //function to get gps data and add data to array of signal data objects
 function onSuccess(position) {
@@ -136,13 +136,13 @@ function onSuccess(position) {
 	
 	//pass data to add data function
 	addData(lat, lng, signal)
-}
+}//end on sucess
 
 // onError Callback receives a PositionError object
 function onError(error) {
 	alert('code: '    + error.code    + '\n' +
 		  'message: ' + error.message + '\n');
-}
+}//end on error
 
 
 //function to get signal strength (random value until plugin completed)
@@ -152,7 +152,7 @@ function getSignalStrength(){
 	
 	//return it
 	return signal
-}
+}//end get signal
 	
 
 
@@ -241,9 +241,7 @@ function initialize() {
 
 	heatmap.setData(testData);
 
-}
+}//end initalize
 
 
 
-//load map and heatmap
-google.maps.event.addDomListener(window, 'load', initialize);

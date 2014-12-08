@@ -110,7 +110,7 @@ function loadData(){
 			var dataAsTextOut = evt.target.result;
 			
 			alert("tester" + dataAsTextOut)
-
+			alert("test2")
 			data = JSON.parse(myJSONtext, reviver);
 			
 			alert(JSON.stringify(data))

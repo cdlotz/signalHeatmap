@@ -288,6 +288,13 @@ function clearData(){
 	addData(0,0,0)
 }
 
+function rawData(){
+	//output current data as text
+	alert(JSON.stringify(data))
+	
+	
+}
+
 
 //load map and heatmap
 google.maps.event.addDomListener(window, 'load', initialize);

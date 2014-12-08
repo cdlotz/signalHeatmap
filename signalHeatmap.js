@@ -158,7 +158,7 @@ function onError(error) {
 //function to get signal strength (max value until plugin completed)
 function getSignalStrength(){
 	//generate random signal strength
-	var signal =6
+	var signal =2
 	
 	//return it
 	return signal

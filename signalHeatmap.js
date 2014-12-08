@@ -49,7 +49,6 @@ function reDraw(){
 	heatmap.setData(testData)
 	heatmap.draw()
 	
-	
 }//end reDraw
 
 
@@ -257,6 +256,7 @@ function addTest(){
 
 function clearData(){
 	data = [];
+	addData(0,0,0)
 }
 
 

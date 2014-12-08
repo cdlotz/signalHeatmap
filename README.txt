@@ -1,0 +1,1 @@
+Icon and splash screen from: http://kevinmehall.net/2009/cell-signal-monitoring

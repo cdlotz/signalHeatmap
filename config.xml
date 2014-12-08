@@ -15,10 +15,10 @@
         Cory Lotz
     </author>
 
-<!--
-	<icon src="icon.png" />
-	<gap:splash src="splash.png" />
--->
+
+	<icon src="cell-signal.png" />
+	<gap:splash src="cell-signal.png" />
+
 
 	<content src="signalHeatmap.html" />
 	

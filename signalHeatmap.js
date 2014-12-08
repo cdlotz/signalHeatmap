@@ -65,7 +65,7 @@ function saveData(){
 	//serialize each object in array as text and add them to the text file
 	var dataAsText = JSON.stringify(data)
 	
-	alert(dataAsText)
+//	alert(dataAsText)
 	
 	//Regular Write Code ( modified from prof kevins exampe)
 
@@ -114,11 +114,11 @@ function loadData(){
 		reader.onloadend = function(evt) {
 			var dataAsTextOut = evt.target.result;
 			
-			alert("tester" + dataAsTextOut)
+//			alert("tester" + dataAsTextOut)
 			
 			data = JSON.parse(dataAsTextOut);
 			
-			alert(JSON.stringify(data))
+//			alert(JSON.stringify(data))
 			
 			
 		};

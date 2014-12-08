@@ -10,7 +10,8 @@ CSCI N 300
 var SIGNAL_MAX = 6
 
 //constant for zoom level
-var ZOOM_LEVEL = 17
+var ZOOM_LEVEL = 14
+
 
 //constant for coordinat decimal places
 var COORDS_LENGTH = 4
@@ -142,6 +143,9 @@ function onSuccess(position) {
 	
 	//pass data to add data function
 	addData(lat, lng, signal)
+	
+	
+	
 }//end on sucess
 
 // onError Callback receives a PositionError object
@@ -207,7 +211,7 @@ function initialize() {
 	
 	//set map options
 	var mapOptions = {
-		zoom: 17,
+		zoom: ZOOM_LEVEL,
 		center: new google.maps.LatLng(39.773778, -86.171536)
 	};
 	//place map in the html doc

@@ -111,7 +111,7 @@ function loadData(){
 			
 			alert("tester" + dataAsTextOut)
 			alert("test2")
-			data = JSON.parse(myJSONtext, reviver);
+			data = JSON.parse(dataAsTextOut, reviver);
 			
 			alert(JSON.stringify(data))
 			

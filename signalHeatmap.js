@@ -14,7 +14,7 @@ var ZOOM_LEVEL = 14
 
 
 //constant for coordinat decimal places
-var COORDS_LENGTH = 5
+var COORDS_LENGTH = 4
 
 //array for heatmap data
 var data = [];

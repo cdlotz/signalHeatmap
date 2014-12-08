@@ -27,7 +27,8 @@ var watchID = null;
 	
 
 function onDeviceReady(){
-	
+	//load map and heatmap
+	google.maps.event.addDomListener(window, 'load', initialize);
 	//time out if new update is recieved every 30 seconds
 	
 	var options = {timeout: 30000};
@@ -242,6 +243,5 @@ function initialize() {
 	heatmap.setData(testData);
 
 }//end initalize
-
 
 

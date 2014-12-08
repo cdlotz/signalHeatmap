@@ -132,7 +132,7 @@ function loadData(){
 //html geolocation
 function getLocation() {
     if (navigator.geolocation) {
-        navigator.geolocation.watchPosition(onSuccess);
+        navigator.geolocation.watchPosition(onSuccess, onError, {maximumAge:6000});
     } else {
         x.innerHTML = "Geolocation is not supported by this browser.";
     }

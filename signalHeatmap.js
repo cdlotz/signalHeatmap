@@ -32,7 +32,7 @@ function onDeviceReady(){
 	
 
 	//load up old data
-	loadData()
+//	loadData()
 	
 		
 	//start watching location
@@ -170,7 +170,7 @@ function onSuccess(position) {
 	addData(lat, lng, signal)
 	
 	//save data to file
-	saveData()
+//	saveData()
 	
 	//redraw the map
 	reDraw()

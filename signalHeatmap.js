@@ -14,7 +14,7 @@ var ZOOM_LEVEL = 14
 
 
 //constant for coordinat decimal places
-var COORDS_LENGTH = 4
+var COORDS_LENGTH = 3
 
 //array for heatmap data
 var data = [];
@@ -199,8 +199,8 @@ function onError(error) {
 
 //function to get signal strength (max value until plugin completed)
 function getSignalStrength(){
-	//generate random signal strength
-	var signal =2
+	//generate random signal strength between 6 and 1
+	var signal = Math.floor((Math.random() * 6) + 1);
 	
 	//return it
 	return signal

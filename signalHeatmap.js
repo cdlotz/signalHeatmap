@@ -24,6 +24,8 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 var watchID = null;
 
+var keepGoing = false;
+
 
 	
 
@@ -32,11 +34,11 @@ function onDeviceReady(){
 	
 
 	//load up old data
-	loadData()
+//	loadData()
 	
 		
 	//start watching location
-	getLocation()
+	geoPause()
 	
 
 	
@@ -93,6 +95,7 @@ function saveData(){
 	
 }	//end file writing
 
+
 //function to bring data in from text file
 function loadData(){
 	
@@ -135,17 +138,24 @@ function loadData(){
 		
 }//end file reading
 
-
  function fail(error) {
 	alert("File Error:" + error.code);
 }
 
+function geoPause(){
+//	while(keepGoing){
+		setInterval(getLocation, 3000);
+//	}
+
+}
 
 //html geolocation
-function getLocation() {
+function getLocation() { 
+	console.log("test")
     if (navigator.geolocation) {
-        navigator.geolocation.watchPosition(onSuccess, onError, {maximumAge:6000});
-    } else {
+        navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge:2000});
+    } 
+	else {
         x.innerHTML = "Geolocation is not supported by this browser.";
     }
 }
@@ -169,7 +179,7 @@ function onSuccess(position) {
 	addData(lat, lng, signal)
 	
 	//save data to file
-	saveData()
+//	saveData()
 	
 	//redraw the map
 	reDraw()
@@ -289,11 +299,16 @@ function addTest(){
 	addData(39.7736, -86.171536, 6)
 	addData(39.7736, -86.171436, 6)
 
+	
+	keepGoing = true;
+	geoPause()
 }
 
 function clearData(){
 	data = [];
 	addData(0,0,0)
+	
+	
 	
 	//overwrite previous file data
 	saveData()
@@ -324,6 +339,13 @@ function reCenterGmap(position){
 	
 		
 }//end reCenter
+
+function alertFunct(){
+
+	alert("alert")
+	
+}
+
 
 //load map and heatmap
 google.maps.event.addDomListener(window, 'load', initialize);

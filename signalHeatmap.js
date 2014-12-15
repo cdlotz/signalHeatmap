@@ -32,11 +32,14 @@ function onDeviceReady(){
 	
 
 	//load up old data
-//	loadData()
+	loadData()
 	
 		
 	//start watching location
 	getLocation()
+	
+	//save the data periodically
+	periodicSave()
 	
 
 	
@@ -62,6 +65,12 @@ function reDraw(){
 	heatmap.draw()
 	
 }//end reDraw
+
+//function to save the data every 10 seconds
+function periodicSave(){
+	setInterval(saveData, 10000)
+	
+}
 
 
 

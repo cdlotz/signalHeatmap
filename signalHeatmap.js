@@ -153,7 +153,7 @@ function geoPause(){
 function getLocation() { 
 	console.log("test")
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge:2000});
+        navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy: true, maximumAge:2000});
     } 
 	else {
         x.innerHTML = "Geolocation is not supported by this browser.";

@@ -139,16 +139,14 @@ function loadData(){
  function fail(error) {
 	alert("File Error:" + error.code);
 }
-
+ 
 
 //html geolocation
 function getLocation() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy: true, maximumAge:2000});
+		navigator.geolocation.watchPosition(onSuccess, onError, {enableHighAccuracy: true, maximumAge:2000});
     } 
 	else {
-        navigator.geolocation.watchPosition(onSuccess, onError, {maximumAge:6000});
-    } else {
         x.innerHTML = "Geolocation is not supported by this browser.";
     }
 }

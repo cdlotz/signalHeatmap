@@ -14,7 +14,7 @@ var ZOOM_LEVEL = 14
 
 
 //constant for coordinat decimal places
-var COORDS_LENGTH = 3
+var COORDS_LENGTH = 4
 
 //array for heatmap data
 var data = [];
@@ -28,7 +28,9 @@ var watchID = null;
 	
 
 function onDeviceReady(){
-
+	
+	//recenter the map at the users location
+	reCenter()
 	
 
 	//load up old data
@@ -43,11 +45,7 @@ function onDeviceReady(){
 	
 
 	
-	//time out if new update is recieved every 30 seconds
-/*	
-	var options = {timeout: 30000};
-	watchID = navigator.geolocation.watchPosition(onSuccess, onError, options);	
-*/	
+	
 }//end on dev ready
 
 //function to redraw map
@@ -201,7 +199,7 @@ function onError(error) {
 function getSignalStrength(){
 	//generate random signal strength between 6 and 1
 	var signal = Math.floor((Math.random() * 6) + 1);
-	
+	console.log(signal)
 	//return it
 	return signal
 }//end get signal
@@ -298,6 +296,8 @@ function initialize() {
 function addTest(){
 	addData(39.7736, -86.171536, 6)
 	addData(39.7736, -86.171436, 6)
+	
+	
 
 }
 
@@ -318,7 +318,7 @@ function rawData(){
 
 function reCenter(){
 	if (navigator.geolocation) {
-        navigator.geolocation.watchPosition(reCenterGmap, onError, {maximumAge:6000});
+        navigator.geolocation.getCurrentPosition(reCenterGmap, onError, {maximumAge:6000});
     } else {
         x.innerHTML = "Geolocation is not supported by this browser.";
     }

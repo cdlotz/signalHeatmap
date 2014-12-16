@@ -17,7 +17,7 @@
 
 
 	<icon src="cell-signal.png" />
-	<gap:splash src="cell-signal.png" />
+	<gap:splash src="cell-signal-splash.png" />
 
 
 	<content src="signalHeatmap.html" />

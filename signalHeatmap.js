@@ -1,7 +1,7 @@
 /*signalHeatmap.js
-javascript file responsible for getting geo and signal data implementing and saving it
+javascript file responsible for getting geo and signal data implementing and saving
 Cory Lotz
-12/7/2014
+12/7/2014 - 12/15/2014
 CSCI N 300
 
 */
@@ -176,7 +176,7 @@ function onSuccess(position) {
 	//pass data to add data function
 	addData(lat, lng, signal)
 	
-	//save data to file
+	//save data to file -now done periodically elswhere
 //	saveData()
 	
 	//redraw the map
